@@ -1,24 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-   const createTask  = document.querySelector("[value='Create New Task']")
-        console.log(createTask)
+  const createTask  = document.querySelector("[value='Create New Task']")
+  console.log(createTask)
 
-   createTask.addEventListener('click', function(e) {
+  createTask.addEventListener('click', function(e) {
     e.preventDefault()
     console.dir(e.target)
-
     const liContent = document.getElementById("new-task-description").value 
     console.log(liContent)
     const liElement = document.createElement("li")
     const ulElement = document.getElementById("tasks")
-    liElement.innerHTML = `${liContent}`
+    liElement.innerHTML = `${liContent} <button class="delete-task"> X </button>`
     console.log(liElement)
     ulElement.appendChild(liElement)
-
-    
-
-   })
-  
-
+    let deleteTask = document.getElementsByClassName("delete-task")
+    console.log(deleteTask)
+  })
 
 });
 
@@ -29,3 +25,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // put liContent inside the li element we created
   // append that li to my todos
 //step 4 create a delete button with its own ......
+  // get the x element using get elements by class name
